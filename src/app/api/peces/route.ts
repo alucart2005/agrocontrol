@@ -13,7 +13,7 @@ export async function GET(request: Request) {
     const { data: { user }, error: authError } = await supabase.auth.getUser()
     
     if (authError || !user) {
-      return NextResponse.json({ error: 'No autorizado' }, { status: 401 })
+      return NextResponse.json({ error: 'No autorizado', details: authError?.message }, { status: 401 })
     }
 
     const { data, error } = await supabase
@@ -22,10 +22,14 @@ export async function GET(request: Request) {
       .eq('user_id', user.id)
       .order('fecha_registro', { ascending: false })
 
-    if (error) throw error
+    if (error) {
+      console.error('Supabase GET peces error:', error)
+      return NextResponse.json({ error: error.message, code: error.code }, { status: 500 })
+    }
     return NextResponse.json(data)
-  } catch (error) {
-    return NextResponse.json({ error: 'Error al obtener peces' }, { status: 500 })
+  } catch (error: any) {
+    console.error('GET peces exception:', error)
+    return NextResponse.json({ error: error.message || 'Error al obtener peces' }, { status: 500 })
   }
 }
 
@@ -40,7 +44,7 @@ export async function POST(request: Request) {
     const { data: { user }, error: authError } = await supabase.auth.getUser()
     
     if (authError || !user) {
-      return NextResponse.json({ error: 'No autorizado' }, { status: 401 })
+      return NextResponse.json({ error: 'No autorizado', details: authError?.message }, { status: 401 })
     }
 
     const body = await request.json()
@@ -65,9 +69,43 @@ export async function POST(request: Request) {
       .select()
       .single()
 
-    if (error) throw error
+    if (error) {
+      console.error('Supabase POST peces error:', error)
+      return NextResponse.json({ error: error.message, code: error.code }, { status: 500 })
+    }
     return NextResponse.json(data, { status: 201 })
-  } catch (error) {
-    return NextResponse.json({ error: 'Error al crear pez' }, { status: 500 })
+  } catch (error: any) {
+    console.error('POST peces exception:', error)
+    return NextResponse.json({ error: error.message || 'Error al crear pez' }, { status: 500 })
+  }
+}
+
+export async function DELETE(request: Request) {
+  try {
+    const { searchParams } = new URL(request.url)
+    const id = searchParams.get('id')
+    if (!id) return NextResponse.json({ error: 'ID requerido' }, { status: 400 })
+
+    const supabase = await createServerClient()
+    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    
+    if (authError || !user) {
+      return NextResponse.json({ error: 'No autorizado' }, { status: 401 })
+    }
+
+    const { error } = await supabase
+      .from('peces')
+      .delete()
+      .eq('id', id)
+      .eq('user_id', user.id)
+
+    if (error) {
+      console.error('Supabase DELETE peces error:', error)
+      return NextResponse.json({ error: error.message, code: error.code }, { status: 500 })
+    }
+    return NextResponse.json({ success: true })
+  } catch (error: any) {
+    console.error('DELETE peces exception:', error)
+    return NextResponse.json({ error: error.message || 'Error al eliminar' }, { status: 500 })
   }
 }

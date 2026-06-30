@@ -6,7 +6,6 @@ export async function createServerClient() {
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
   if (!supabaseUrl || !supabaseAnonKey) {
-    // Return a mock client during build time
     return {
       auth: {
         getUser: async () => ({ data: { user: null }, error: null }),
@@ -14,30 +13,20 @@ export async function createServerClient() {
       from: () => ({
         select: () => ({
           eq: () => ({
-            order: () => ({
-              then: (resolve: Function) => resolve({ data: [], error: null }),
-            }),
-            single: () => ({
-              then: (resolve: Function) => resolve({ data: null, error: null }),
-            }),
-            head: () => ({
-              then: (resolve: Function) => resolve({ count: 0, error: null }),
-            }),
+            order: () => Promise.resolve({ data: [], error: null }),
+            single: () => Promise.resolve({ data: null, error: null }),
           }),
-          order: () => ({
-            then: (resolve: Function) => resolve({ data: [], error: null }),
-          }),
-          single: () => ({
-            then: (resolve: Function) => resolve({ data: null, error: null }),
-          }),
+          order: () => Promise.resolve({ data: [], error: null }),
+          single: () => Promise.resolve({ data: null, error: null }),
         }),
         insert: () => ({
           select: () => ({
-            single: () => ({
-              then: (resolve: Function) => resolve({ data: null, error: null }),
-            }),
+            single: () => Promise.resolve({ data: null, error: null }),
           }),
         }),
+        update: () => ({ eq: () => Promise.resolve({ error: null }) }),
+        delete: () => ({ eq: () => Promise.resolve({ error: null }) }),
+        then: (resolve: Function) => resolve({ data: [], error: null }),
       }),
     } as any
   }
@@ -57,9 +46,7 @@ export async function createServerClient() {
             cookiesToSet.forEach(({ name, value, options }) =>
               cookieStore.set(name, value, options)
             )
-          } catch {
-            // Server Component - ignore
-          }
+          } catch {}
         },
       },
     }

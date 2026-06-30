@@ -71,3 +71,21 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Error al crear gallina' }, { status: 500 })
   }
 }
+
+export async function DELETE(request: Request) {
+  try {
+    const { searchParams } = new URL(request.url)
+    const id = searchParams.get('id')
+    if (!id) return NextResponse.json({ error: 'ID requerido' }, { status: 400 })
+
+    const supabase = await createServerClient()
+    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    if (authError || !user) return NextResponse.json({ error: 'No autorizado' }, { status: 401 })
+
+    const { error } = await supabase.from('gallinas').delete().eq('id', id).eq('user_id', user.id)
+    if (error) throw error
+    return NextResponse.json({ success: true })
+  } catch (error) {
+    return NextResponse.json({ error: 'Error al eliminar' }, { status: 500 })
+  }
+}

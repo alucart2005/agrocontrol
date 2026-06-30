@@ -8,7 +8,7 @@ export const pecesSchema = z.object({
   stockActual: z.number().int().min(0).max(10000),
   pesoPromedio: z.number().min(0).max(10000),
   alimentoKg: z.number().min(0).max(10000),
-  notas: z.string().max(500).optional(),
+  notas: z.string().max(500).optional().nullable(),
 })
 
 export const gallinasSchema = z.object({
@@ -18,7 +18,7 @@ export const gallinasSchema = z.object({
   mortalidad: z.number().int().min(0).max(1000),
   alimentoKg: z.number().min(0).max(10000),
   lote: z.string().min(1).max(50),
-  notas: z.string().max(500).optional(),
+  notas: z.string().max(500).optional().nullable(),
 })
 
 export const patosSchema = z.object({
@@ -26,7 +26,7 @@ export const patosSchema = z.object({
   huevosMes: z.number().int().min(0).max(50000),
   mortalidad: z.number().int().min(0).max(1000),
   alimentoKg: z.number().min(0).max(10000),
-  notas: z.string().max(500).optional(),
+  notas: z.string().max(500).optional().nullable(),
 })
 
 export const conejosSchema = z.object({
@@ -37,7 +37,7 @@ export const conejosSchema = z.object({
   pesoPromedio: z.number().min(0).max(10000),
   mortalidad: z.number().int().min(0).max(1000),
   alimentoKg: z.number().min(0).max(10000),
-  notas: z.string().max(500).optional(),
+  notas: z.string().max(500).optional().nullable(),
 })
 
 export const transaccionSchema = z.object({
