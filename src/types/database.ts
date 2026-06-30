@@ -1,0 +1,10 @@
+export type Database = {
+  public: {
+    Tables: {
+      [key: string]: {
+        Row: Record<string, unknown>
+        Insert: Record<string, unknown>
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="50%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  
+  <!-- Sidebar -->
+  <rect x="0" y="0" width="256" height="100%" fill="rgba(15,23,42,0.9)" stroke="#334155" stroke-width="1"/>
+  
+  <!-- Logo -->
+  <text x="30" y="50" font-family="Arial" font-size="20" fill="#22c55e" font-weight="bold">🌿 AgroControl</text>
+  
+  <!-- Menu Items -->
+  <rect x="16" y="100" width="224" height="40" rx="8" fill="transparent"/>
+  <text x="50" y="125" font-family="Arial" font-size="14" fill="#94a3b8">📊 Dashboard</text>
+  
+  <rect x="16" y="150" width="224" height="40" rx="8" fill="transparent"/>
+  <text x="50" y="175" font-family="Arial" font-size="14" fill="#94a3b8">🐟 Peces</text>
+  
+  <rect x="16" y="200" width="224" height="40" rx="8" fill="rgba(245,158,11,0.2)" stroke="#f59e0b" stroke-width="1"/>
+  <text x="50" y="225" font-family="Arial" font-size="14" fill="#f59e0b">🐔 Gallinas</text>
+  
+  <!-- Header -->
+  <rect x="256" y="0" width="1664" height="64" fill="rgba(15,23,42,0.6)" stroke="#334155" stroke-width="1"/>
+  <text x="280" y="30" font-family="Arial" font-size="18" fill="#e2e8f0" font-weight="bold">🐔 Gallinas</text>
+  <text x="280" y="50" font-family="Arial" font-size="12" fill="#94a3b8">Producción de huevos y manejo de lotes</text>
+  
+  <!-- Button -->
+  <rect x="1600" y="12" width="180" height="40" rx="8" fill="#22c55e"/>
+  <text x="1630" y="38" font-family="Arial" font-size="14" fill="white" font-weight="bold">+ Nuevo Registro</text>
+  
+  <!-- Stats Cards -->
+  <rect x="280" y="80" width="380" height="120" rx="12" fill="rgba(30,41,59,0.8)" stroke="#334155" stroke-width="1"/>
+  <text x="300" y="110" font-family="Arial" font-size="14" fill="#94a3b8">Huevos Hoy</text>
+  <text x="300" y="155" font-family="Arial" font-size="36" fill="#f59e0b" font-weight="bold">85</text>
+  
+  <rect x="680" y="80" width="380" height="120" rx="12" fill="rgba(30,41,59,0.8)" stroke="#334155" stroke-width="1"/>
+  <text x="700" y="110" font-family="Arial" font-size="14" fill="#94a3b8">Huevos Semana</text>
+  <text x="700" y="155" font-family="Arial" font-size="36" fill="#e2e8f0" font-weight="bold">595</text>
+  
+  <rect x="1080" y="80" width="380" height="120" rx="12" fill="rgba(30,41,59,0.8)" stroke="#334155" stroke-width="1"/>
+  <text x="1100" y="110" font-family="Arial" font-size="14" fill="#94a3b8">Huevos Mes</text>
+  <text x="1100" y="155" font-family="Arial" font-size="36" fill="#e2e8f0" font-weight="bold">2,500</text>
+  
+  <rect x="1480" y="80" width="380" height="120" rx="12" fill="rgba(30,41,59,0.8)" stroke="#334155" stroke-width="1"/>
+  <text x="1500" y="110" font-family="Arial" font-size="14" fill="#94a3b8">Mortalidad</text>
+  <text x="1500" y="155" font-family="Arial" font-size="36" fill="#ef4444" font-weight="bold">2</text>
+  
+  <!-- Form Card -->
+  <rect x="280" y="220" width="1600" height="250" rx="12" fill="rgba(30,41,59,0.8)" stroke="#334155" stroke-width="1"/>
+  <text x="300" y="250" font-family="Arial" font-size="16" fill="#e2e8f0" font-weight="bold">Registrar Producción Diaria</text>
+  
+  <!-- Form Fields -->
+  <rect x="300" y="270" width="250" height="60" rx="8" fill="rgba(51,65,85,0.5)" stroke="#475569" stroke-width="1"/>
+  <text x="310" y="290" font-family="Arial" font-size="12" fill="#94a3b8">Lote</text>
+  <text x="310" y="315" font-family="Arial" font-size="14" fill="#e2e8f0">Lote A-2026</text>
+  
+  <rect x="570" y="270" width="250" height="60" rx="8" fill="rgba(51,65,85,0.5)" stroke="#475569" stroke-width="1"/>
+  <text x="580" y="290" font-family="Arial" font-size="12" fill="#94a3b8">Huevos Hoy</text>
+  <text x="580" y="315" font-family="Arial" font-size="14" fill="#e2e8f0">85</text>
+  
+  <rect x="840" y="270" width="250" height="60" rx="8" fill="rgba(51,65,85,0.5)" stroke="#475569" stroke-width="1"/>
+  <text x="850" y="290" font-family="Arial" font-size="12" fill="#94a3b8">Huevos Semana</text>
+  <text x="850" y="315" font-family="Arial" font-size="14" fill="#e2e8f0">595</text>
+  
+  <rect x="1110" y="270" width="250" height="60" rx="8" fill="rgba(51,65,85,0.5)" stroke="#475569" stroke-width="1"/>
+  <text x="1120" y="290" font-family="Arial" font-size="12" fill="#94a3b8">Huevos Mes</text>
+  <text x="1120" y="315" font-family="Arial" font-size="14" fill="#e2e8f0">2,500</text>
+  
+  <rect x="1380" y="270" width="250" height="60" rx="8" fill="rgba(51,65,85,0.5)" stroke="#475569" stroke-width="1"/>
+  <text x="1390" y="290" font-family="Arial" font-size="12" fill="#94a3b8">Mortalidad</text>
+  <text x="1390" y="315" font-family="Arial" font-size="14" fill="#e2e8f0">0</text>
+  
+  <!-- Footer -->
+  <text x="960" y="1060" font-family="Arial" font-size="14" fill="#64748b" text-anchor="middle">🐔 Módulo de Gallinas - AgroControl</text>
+</svg>

@@ -1,0 +1,79 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="50%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  
+  <!-- Sidebar -->
+  <rect x="0" y="0" width="256" height="100%" fill="rgba(15,23,42,0.9)" stroke="#334155" stroke-width="1"/>
+  
+  <!-- Logo -->
+  <text x="30" y="50" font-family="Arial" font-size="20" fill="#22c55e" font-weight="bold">🌿 AgroControl</text>
+  
+  <!-- Menu Items -->
+  <rect x="16" y="100" width="224" height="40" rx="8" fill="transparent"/>
+  <text x="50" y="125" font-family="Arial" font-size="14" fill="#94a3b8">📊 Dashboard</text>
+  
+  <rect x="16" y="150" width="224" height="40" rx="8" fill="rgba(59,130,246,0.2)" stroke="#3b82f6" stroke-width="1"/>
+  <text x="50" y="175" font-family="Arial" font-size="14" fill="#3b82f6">🐟 Peces</text>
+  
+  <!-- Header -->
+  <rect x="256" y="0" width="1664" height="64" fill="rgba(15,23,42,0.6)" stroke="#334155" stroke-width="1"/>
+  <text x="280" y="30" font-family="Arial" font-size="18" fill="#e2e8f0" font-weight="bold">🐟 Peces</text>
+  <text x="280" y="50" font-family="Arial" font-size="12" fill="#94a3b8">Gestión de estanques y producción piscícola</text>
+  
+  <!-- Button -->
+  <rect x="1600" y="12" width="180" height="40" rx="8" fill="#22c55e"/>
+  <text x="1630" y="38" font-family="Arial" font-size="14" fill="white" font-weight="bold">+ Nuevo Registro</text>
+  
+  <!-- Form Card -->
+  <rect x="280" y="80" width="1600" height="200" rx="12" fill="rgba(30,41,59,0.8)" stroke="#334155" stroke-width="1"/>
+  <text x="300" y="110" font-family="Arial" font-size="16" fill="#e2e8f0" font-weight="bold">Registrar Peso/Alimentación</text>
+  
+  <!-- Form Fields -->
+  <rect x="300" y="130" width="300" height="60" rx="8" fill="rgba(51,65,85,0.5)" stroke="#475569" stroke-width="1"/>
+  <text x="310" y="150" font-family="Arial" font-size="12" fill="#94a3b8">Estanque</text>
+  <text x="310" y="175" font-family="Arial" font-size="14" fill="#e2e8f0">Estanque 1</text>
+  
+  <rect x="620" y="130" width="300" height="60" rx="8" fill="rgba(51,65,85,0.5)" stroke="#475569" stroke-width="1"/>
+  <text x="630" y="150" font-family="Arial" font-size="12" fill="#94a3b8">Especie</text>
+  <text x="630" y="175" font-family="Arial" font-size="14" fill="#e2e8f0">Tilapia</text>
+  
+  <rect x="940" y="130" width="300" height="60" rx="8" fill="rgba(51,65,85,0.5)" stroke="#475569" stroke-width="1"/>
+  <text x="950" y="150" font-family="Arial" font-size="12" fill="#94a3b8">Stock Actual</text>
+  <text x="950" y="175" font-family="Arial" font-size="14" fill="#e2e8f0">195</text>
+  
+  <rect x="1260" y="130" width="300" height="60" rx="8" fill="rgba(51,65,85,0.5)" stroke="#475569" stroke-width="1"/>
+  <text x="1270" y="150" font-family="Arial" font-size="12" fill="#94a3b8">Peso Promedio (g)</text>
+  <text x="1270" y="175" font-family="Arial" font-size="14" fill="#e2e8f0">350.50</text>
+  
+  <!-- Ponds Grid -->
+  <rect x="280" y="300" width="1600" height="400" rx="12" fill="rgba(30,41,59,0.8)" stroke="#334155" stroke-width="1"/>
+  <text x="300" y="330" font-family="Arial" font-size="16" fill="#e2e8f0" font-weight="bold">Estanques</text>
+  
+  <!-- Pond Cards -->
+  <rect x="300" y="350" width="500" height="120" rx="8" fill="rgba(51,65,85,0.3)" stroke="#475569" stroke-width="1"/>
+  <text x="320" y="380" font-family="Arial" font-size="16" fill="#3b82f6">🐟 Estanque 1</text>
+  <text x="320" y="405" font-family="Arial" font-size="14" fill="#94a3b8">Especie: <tspan fill="#e2e8f0">Tilapia</tspan></text>
+  <text x="320" y="430" font-family="Arial" font-size="14" fill="#94a3b8">Stock: <tspan fill="#e2e8f0">195</tspan></text>
+  <text x="320" y="455" font-family="Arial" font-size="14" fill="#94a3b8">Peso prom: <tspan fill="#e2e8f0">350g</tspan></text>
+  
+  <rect x="820" y="350" width="500" height="120" rx="8" fill="rgba(51,65,85,0.3)" stroke="#475569" stroke-width="1"/>
+  <text x="840" y="380" font-family="Arial" font-size="16" fill="#3b82f6">🐟 Estanque 2</text>
+  <text x="840" y="405" font-family="Arial" font-size="14" fill="#94a3b8">Especie: <tspan fill="#e2e8f0">Tilapia</tspan></text>
+  <text x="840" y="430" font-family="Arial" font-size="14" fill="#94a3b8">Stock: <tspan fill="#e2e8f0">148</tspan></text>
+  <text x="840" y="455" font-family="Arial" font-size="14" fill="#94a3b8">Peso prom: <tspan fill="#e2e8f0">280g</tspan></text>
+  
+  <rect x="1340" y="350" width="500" height="120" rx="8" fill="rgba(51,65,85,0.3)" stroke="#475569" stroke-width="1"/>
+  <text x="1360" y="380" font-family="Arial" font-size="16" fill="#3b82f6">🐟 Estanque 3</text>
+  <text x="1360" y="405" font-family="Arial" font-size="14" fill="#94a3b8">Especie: <tspan fill="#e2e8f0">Cachama</tspan></text>
+  <text x="1360" y="430" font-family="Arial" font-size="14" fill="#94a3b8">Stock: <tspan fill="#e2e8f0">98</tspan></text>
+  <text x="1360" y="455" font-family="Arial" font-size="14" fill="#94a3b8">Peso prom: <tspan fill="#e2e8f0">400g</tspan></text>
+  
+  <!-- Footer -->
+  <text x="960" y="1060" font-family="Arial" font-size="14" fill="#64748b" text-anchor="middle">🐟 Módulo de Peces - AgroControl</text>
+</svg>
