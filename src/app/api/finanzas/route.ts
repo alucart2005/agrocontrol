@@ -67,7 +67,25 @@ export async function POST(request: Request) {
 
     if (error) throw error
     return NextResponse.json(data, { status: 201 })
-  } catch (error) {
-    return NextResponse.json({ error: 'Error al crear transacción' }, { status: 500 })
+  } catch (error: any) {
+    return NextResponse.json({ error: error.message || 'Error al crear transacción' }, { status: 500 })
+  }
+}
+
+export async function DELETE(request: Request) {
+  try {
+    const { searchParams } = new URL(request.url)
+    const id = searchParams.get('id')
+    if (!id) return NextResponse.json({ error: 'ID requerido' }, { status: 400 })
+
+    const supabase = await createServerClient()
+    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    if (authError || !user) return NextResponse.json({ error: 'No autorizado' }, { status: 401 })
+
+    const { error } = await supabase.from('transacciones').delete().eq('id', id).eq('user_id', user.id)
+    if (error) throw error
+    return NextResponse.json({ success: true })
+  } catch (error: any) {
+    return NextResponse.json({ error: error.message || 'Error al eliminar' }, { status: 500 })
   }
 }
